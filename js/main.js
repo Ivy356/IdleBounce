@@ -3,9 +3,9 @@ var height = 900;
 var value = 0; 
 var context; 
 var level = 1; 
-var click = {multi: 1.07,rank: 1, bCost: 10,bDamage:10} 
-var baseCostMulti = 1.07; 
-var baseHealthMulti = 1.07; 
+var click = {multi: 1.2,rank: 1, bCost: 10,bDamage:10} 
+var baseCostMulti = 1.15; 
+var baseHealthMulti = 1.5; 
 var startingBalls = 10; 
 var balls = [ 
   {active:false,x:200,y:200,dx:.707,dy:.707,color:"#5555ff",radius:20,bDamage:8,rank:0,cost:10,id:0,clone:false,speed:4}, 
@@ -174,10 +174,10 @@ function levelBall(id){
         radius:tempBall.radius,id:tempBall.id,clone:true,speed:tempBall.speed}); 
     } 
     if(notationScientfic){ 
-        document.getElementById(id+"C").innerHTML = numberformat.format(Math.floor(tempBall.cost*Math.pow(1.07,tempBall.rank)),{format: 'scientific'}); 
+        document.getElementById(id+"C").innerHTML = numberformat.format(Math.floor(tempBall.cost*Math.pow(1.15,tempBall.rank)),{format: 'scientific'}); 
     } 
     else{ 
-        document.getElementById(id+"C").innerHTML = numberformat.format(Math.floor(tempBall.cost*Math.pow(1.07,tempBall.rank))); 
+        document.getElementById(id+"C").innerHTML = numberformat.format(Math.floor(tempBall.cost*Math.pow(1.15,tempBall.rank))); 
     } 
     document.getElementById(id+"A").innerHTML = tempBall.rank; 
     valueSet(); 
@@ -274,10 +274,10 @@ function init(){
             radius:loadBall.radius,id:loadBall.id,clone:true,speed:loadBall.speed}); 
         } 
         if(notationScientfic){ 
-            document.getElementById(loadBall.id+"C").innerHTML = numberformat.format(Math.floor(loadBall.cost*Math.pow(1.07,loadBall.rank)),{format: 'scientific'}); 
+            document.getElementById(loadBall.id+"C").innerHTML = numberformat.format(Math.floor(loadBall.cost*Math.pow(1.15,loadBall.rank)),{format: 'scientific'}); 
         } 
         else{ 
-            document.getElementById(loadBall.id+"C").innerHTML = numberformat.format(Math.floor(loadBall.cost*Math.pow(1.07,loadBall.rank))); 
+            document.getElementById(loadBall.id+"C").innerHTML = numberformat.format(Math.floor(loadBall.cost*Math.pow(1.15,loadBall.rank))); 
         } 
         document.getElementById(loadBall.id+"A").innerHTML = loadBall.rank; 
       } 
