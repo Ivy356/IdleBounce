@@ -39,7 +39,7 @@ var strengthBoost = 10;
 var speedMulti = 1; 
 var radiusMulti = 1; 
 var animationSpeed = 0; 
-var strengthBoostReq = 100; 
+var strengthBoostReq = 25; 
 var cloneReq = 50; 
 var enemyRadiusMulti = 1; 
 var ballPointMulti = 1; 
@@ -156,8 +156,8 @@ function clickLevel(){
 } 
 function levelBall(id){ 
   var tempBall = balls[id]; 
-  strengthBoost = 10+pUpgrades[3]; 
-  strengthBoostReq = 100-pUpgrades[2]; 
+  strengthBoost = 3+pUpgrades[3]; 
+  strengthBoostReq = 25-pUpgrades[2]; 
   cloneReq = 50-pUpgrades[7]; 
   if(value>=Math.floor(tempBall.cost*Math.pow(baseCostMulti,tempBall.rank))){ 
     if(tempBall.rank == 0){ 
@@ -208,8 +208,8 @@ function init(){
         bondRate = 0.01; 
       } 
       pCountMulti = (((Math.floor((balls.length-deactiveBalls)/5))*(0.3*pUpgrades[1]))+1); 
-      strengthBoostReq = 100-pUpgrades[2]; 
-      strengthBoost = 10+pUpgrades[3]; 
+      strengthBoostReq = 25-pUpgrades[2]; 
+      strengthBoost = 3+pUpgrades[3]; 
       speedMulti = (0.1*pUpgrades[4])+1; 
       radiusMulti = 1 +(0.1*pUpgrades[5]); 
       exciteRate = pUpgrades[6]; 
@@ -554,13 +554,13 @@ function wipeSave(){
   } 
 } 
 function prestige(){ 
-  if(level >= 400){ 
+  if(level >= 100){ 
     if(confirm("Are you sure you want to Prestige? This will get rid of all your numbers, all your levels and all your ball upgrades/clones. It will not get rid of Achievements or Prestige Upgrades. By prestiging you will get 1 Ball Point which gives you 100% more income (additive)") == true){ 
-      ballPoints += Math.pow(2,(Math.floor((level-400)/100))); 
+      ballPoints += Math.pow(2,(Math.floor((level-100)/20))); 
       prestiged++; 
       level = (5*pUpgrades[10]); 
       click.rank = 1; 
-      click.bDamage = 10; 
+      click.bDamage = 100; 
       value = 10 * Math.pow(10,pUpgrades[8]); 
       balls = [ 
         {active:false,x:200,y:200,dx:.707,dy:.707,color:"#5555ff",radius:15,bDamage:10,rank:0,cost:10,id:0,clone:false,speed:5}, 
