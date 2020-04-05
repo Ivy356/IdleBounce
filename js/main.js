@@ -521,6 +521,7 @@ function toggleNightMode(){
     document.getElementById("p8").style.color = "#000000"; 
     document.getElementById("myCanvas").style.border = "3px solid #000000"; 
     document.getElementById("Balls").style.border = "1px solid #000000"; 
+    document.getElementById("Special").style.border = "1px solid #000000";
     document.getElementById("Tutorial").style.border = "1px solid #000000"; 
     document.getElementById("Prestige").style.border = "1px solid #000000"; 
     document.getElementById("Options").style.border = "1px solid #000000"; 
@@ -540,6 +541,7 @@ function toggleNightMode(){
     document.getElementById("p8").style.color = "#ffffff"; 
     document.getElementById("myCanvas").style.border = "3px solid #ffffff"; 
     document.getElementById("Balls").style.border = "1px solid #ffffff"; 
+    document.getElementById("Special").style.border = "1px solid #ffffff";
     document.getElementById("Tutorial").style.border = "1px solid #ffffff"; 
     document.getElementById("Prestige").style.border = "1px solid #ffffff"; 
     document.getElementById("Options").style.border = "1px solid #ffffff"; 
@@ -598,7 +600,7 @@ function prestige(){
     } 
   } 
   else{ 
-    alert("You need to be at level 400 to Prestige.") 
+    alert("You need to be at level 100 to Prestige.") 
   } 
 } 
 function switchTab(evt, tabName) { 
