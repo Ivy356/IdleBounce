@@ -18,7 +18,10 @@ var balls = [
   {active:false,x:1100,y:400,dx:-.707,dy:-.707,color:"#EE33A1",radius:5,bDamage:175e21,rank:0,cost:175e21,id:7,clone:false,speed:9.5}, 
   {active:false,x:300,y:500,dx:.707,dy:-.707,color:"#2ED371",radius:20,bDamage:650e27,rank:0,cost:650e27,id:8,clone:false,speed:4}, 
   {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,bDamage:10e33,rank:0,cost:10e33,id:9,clone:false,speed:5} 
-]; 
+];
+var specialBalls = [ 
+  {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#000000",radius:27.5,bDamage:1e48,rank:0,cost:1e48,id:10,clone:false,speed:8} 
+];
 var clickBalls = [ 
   {active:false,x:300,y:200,dx:-.707,dy:.707,color:"#666666",radius:20,bDamage:100,rank:1,cost:10,id:100,clone:false,speed:4}, 
   {active:false,x:200,y:200,dx:-.707,dy:.707,color:"#666666",radius:20,bDamage:100,rank:1,cost:10,id:101,clone:false,speed:4}, 
