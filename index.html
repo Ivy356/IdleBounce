@@ -6,6 +6,10 @@
       <script src="//cdn.jsdelivr.net/gh/keanu246/idleformat@v2.4/dist/swarm-numberformat.js"></script>
       <link rel="stylesheet" href="css/style.css">
       <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+      <audio controls autoplay loop>
+      <source src="music.mp3" type="audio/mpeg">
+      Your browser does not support the game music.
+      </audio>
       <div>
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46297477-3"></script>
           <script>
@@ -58,7 +62,9 @@
       <div id="Special" class="tabcontent">
         <span onclick = "special()"></span>
         <button class = "upgrade" type = "button" onClick = "levelBall(10)"><span id="10T">Buy</span> Laser Ball <br><b>Cost: <span id="10C">1 quindecillion</span></b><br><i>Rank: <span id="10A">0</span></i></button>
-        <p class = "small" id="p3">Special balls are special. Like prestige, you will lose things like prestige.</p>
+        <button class = "upgrade" type = "button" onClick = "levelBall(11)"><span id="11T">Buy</span> Fire Ball <br><b>Cost: <span id="11C">100 novemdecillion</span></b><br><i>Rank: <span id="11A">0</span></i></button>
+        <button class = "upgrade" type = "button" onClick = "levelBall(12)"><span id="12T">Buy</span> Ice Ball <br><b>Cost: <span id="12C">10 tresvigintillion</span></b><br><i>Rank: <span id="12A">0</span></i></button>
+        <p class = "small" id="p3">Special balls are special but robust. Like prestige, you will lose things just like prestige.</p>
       </div>
       <div id="Tutorial" class="tabcontent">
         <p class = "small" id="p5">Start by bonding to get some sub-atomic particles, you can spend those particles on balls (which get particles automatically)
@@ -84,6 +90,11 @@
         <button class = "prestige" type = "button" onClick = "prestigeUpgrade(10)">Make all enemies radius bigger by 10%<br><b>Costs: <span id = "10b">1</span> BP</b><br><i>Current radius multiplier is <span id = "10p">100</span>%</i></button>
         <button class = "prestige" type = "button" onClick = "prestigeUpgrade(11)">Increase your starting level by 5<br><b>Costs: <span id = "11b">10</span> BP</b><br><i>Current starting level is <span id = "11p">0</span></i></button>
         <button class = "prestige" type = "button" onClick = "prestigeUpgrade(12)">Increase bonus per BallPoint by 10%<br><b>Costs: <span id = "12b">5</span> BP</b><br><i>Current income bonus is <span id = "12p">100</span>%</i></button>
+        <p class ="large" id = "p9">Orb of Frivolity Upgrades</p>
+        <p class ="large" id = "p10">Orb of Uniqueness Upgrades</p>
+        <p class ="large" id = "p11">Orb of Vivacity Upgrades</p>
+        <p class ="large" id = "p12">Orb of Generosity Upgrades</p>
+        <p class ="large" id = "p13">Orb of Dangerousness Upgrades</p>
       </div>
       <div class="tabcontent" id="Changelog">
         <h1>12/5/2017</h1>
