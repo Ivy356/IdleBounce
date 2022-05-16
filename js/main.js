@@ -11,8 +11,8 @@ var balls = [
   {active:false,x:200,y:200,dx:.707,dy:.707,color:"#5555ff",radius:15,bDamage:10,rank:0,cost:10,id:0,clone:false,speed:5}, 
   {active:false,x:300,y:300,dx:.707,dy:-.707,color:"#00ff00",radius:12.5,bDamage:100,rank:0,cost:300,id:1,clone:false,speed:6}, 
   {active:false,x:100,y:100,dx:-.707,dy:.707,color:"#ff0000",radius:21.5,bDamage:5000,rank:0,cost:50000,id:2,clone:false,speed:4}, 
-  {active:false,x:400,y:400,dx:-.707,dy:-.707,color:"#ffff00",radius:15,bDamage:25000000,rank:0,cost:250000000,id:3,clone:false,speed:7.5}, 
-  {active:false,x:900,y:300,dx:-.707,dy:.707,color:"#FFA500",radius:10,bDamage:1e11,rank:0,cost:1e12,id:4,clone:false,speed:5.5}, 
+  {active:false,x:400,y:400,dx:-.707,dy:-.707,color:"#ffff00",radius:15,bDamage:15000000,rank:0,cost:150000000,id:3,clone:false,speed:7.5}, 
+  {active:false,x:900,y:300,dx:-.707,dy:.707,color:"#FFA500",radius:10,bDamage:7.5e10,rank:0,cost:7.5e11,id:4,clone:false,speed:5.5}, 
   {active:false,x:1000,y:200,dx:-.707,dy:-.707,color:"#800080",radius:30,bDamage:3.5e14,rank:0,cost:3.5e15,id:5,clone:false,speed:3}, 
   {active:false,x:1200,y:300,dx:.707,dy:.707,color:"#00C7D1",radius:12.5,bDamage:12.5e17,rank:0,cost:12.5e18,id:6,clone:false,speed:6.5}, 
   {active:false,x:1100,y:400,dx:-.707,dy:-.707,color:"#EE33A1",radius:5,bDamage:175e20,rank:0,cost:175e21,id:7,clone:false,speed:9.5}, 
@@ -27,7 +27,8 @@ var clickBalls = [
   {active:false,x:200,y:200,dx:-.707,dy:.707,color:"#666666",radius:20,bDamage:25,rank:1,cost:10,id:101,clone:false,speed:4}, 
   {active:false,x:500,y:200,dx:-.707,dy:.707,color:"#666666",radius:20,bDamage:25,rank:1,cost:10,id:102,clone:false,speed:4}, 
   {active:false,x:700,y:200,dx:-.707,dy:.707,color:"#666666",radius:20,bDamage:25,rank:1,cost:10,id:103,clone:false,speed:4}, 
-  {active:false,x:100,y:200,dx:-.707,dy:.707,color:"#666666",radius:20,bDamage:25,rank:1,cost:10,id:104,clone:false,speed:4} 
+  {active:false,x:100,y:200,dx:-.707,dy:.707,color:"#666666",radius:20,bDamage:25,rank:1,cost:10,id:104,clone:false,speed:4},
+  {active:false,x:900,y:200,dx:-.707,dy:.707,color:"#666666",radius:25,bDamage:50,rank:1,cost:10,id:105,clone:false,speed:4.5}
 ] 
 var enemies = []; 
 var shrink = false; 
@@ -59,47 +60,61 @@ var start = 0;
 getCPS(); 
 function getCPS() { 
   setTimeout(function() { 
-    if(count>=20){ 
+    if(count>=30){ 
       clickBalls[0].active = true; 
       clickBalls[1].active = true; 
       clickBalls[2].active = true; 
       clickBalls[3].active = true; 
       clickBalls[4].active = true; 
+      clickBalls[5].active = true;
+    } 
+    else if(count>=20){ 
+      clickBalls[0].active = true; 
+      clickBalls[1].active = true; 
+      clickBalls[2].active = true; 
+      clickBalls[3].active = true; 
+      clickBalls[4].active = true;
+      clickBalls[5].active = false;
     } 
     else if(count>=15){ 
       clickBalls[0].active = true; 
       clickBalls[1].active = true; 
       clickBalls[2].active = true; 
       clickBalls[3].active = true; 
-      clickBalls[4].active = false; 
+      clickBalls[4].active = false;
+      clickBalls[5].active = false;
     } 
     else if(count>=10){ 
       clickBalls[0].active = true; 
       clickBalls[1].active = true; 
       clickBalls[2].active = true; 
       clickBalls[3].active = false; 
-      clickBalls[4].active = false; 
+      clickBalls[4].active = false;
+      clickBalls[5].active = false;
     } 
     else if(count>=5){ 
       clickBalls[0].active = true; 
       clickBalls[1].active = true; 
       clickBalls[2].active = false; 
       clickBalls[3].active = false; 
-      clickBalls[4].active = false; 
+      clickBalls[4].active = false;
+      clickBalls[5].active = false;
     } 
     else if(count>=1){ 
       clickBalls[0].active = true; 
       clickBalls[1].active = false; 
       clickBalls[2].active = false; 
       clickBalls[3].active = false; 
-      clickBalls[4].active = false; 
+      clickBalls[4].active = false;
+      clickBalls[5].active = false;
     } 
     else{ 
       clickBalls[0].active = false; 
       clickBalls[1].active = false; 
       clickBalls[2].active = false; 
       clickBalls[3].active = false; 
-      clickBalls[4].active = false; 
+      clickBalls[4].active = false;
+      clickBalls[5].active = false;
     } 
     cps.innerHTML = count; 
     count = 0; 
@@ -527,6 +542,8 @@ function toggleNightMode(){
     document.getElementById("p11").style.color = "#000000";
     document.getElementById("p12").style.color = "#000000";
     document.getElementById("p13").style.color = "#000000";
+    document.getElementById("p14").style.color = "#000000";
+    document.getElementById("p15").style.color = "#000000";
     document.getElementById("myCanvas").style.border = "3px solid #000000"; 
     document.getElementById("Balls").style.border = "1px solid #000000"; 
     document.getElementById("Special").style.border = "1px solid #000000";
@@ -552,6 +569,8 @@ function toggleNightMode(){
     document.getElementById("p11").style.color = "#ffffff"; 
     document.getElementById("p12").style.color = "#ffffff"; 
     document.getElementById("p13").style.color = "#ffffff";
+    document.getElementById("p14").style.color = "#ffffff";
+    document.getElementById("p15").style.color = "#ffffff";
     document.getElementById("myCanvas").style.border = "3px solid #ffffff"; 
     document.getElementById("Balls").style.border = "1px solid #ffffff"; 
     document.getElementById("Special").style.border = "1px solid #ffffff";
