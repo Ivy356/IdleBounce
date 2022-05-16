@@ -3,7 +3,7 @@ var height = 900;
 var value = 0; 
 var context; 
 var level = 1; 
-var click = {multi: 1.2,rank: 1, bCost: 10,bDamage:100} 
+var click = {multi: 1.2,rank: 1, bCost: 10,bDamage:50} 
 var baseCostMulti = 1.15; 
 var baseHealthMulti = 1.5; 
 var startingBalls = 13; 
@@ -42,7 +42,7 @@ var strengthBoost = 10;
 var speedMulti = 1; 
 var radiusMulti = 1; 
 var animationSpeed = 0; 
-var strengthBoostReq = 25; 
+var strengthBoostReq = 100; 
 var cloneReq = 50; 
 var enemyRadiusMulti = 1; 
 var ballPointMulti = 1; 
@@ -573,7 +573,7 @@ function prestige(){
       prestiged++; 
       level = (5*pUpgrades[10]); 
       click.rank = 1; 
-      click.bDamage = 100; 
+      click.bDamage = 50; 
       value = 10 * Math.pow(10,pUpgrades[8]); 
       balls = [ 
         {active:false,x:200,y:200,dx:.707,dy:.707,color:"#5555ff",radius:15,bDamage:10,rank:0,cost:10,id:0,clone:false,speed:5}, 
