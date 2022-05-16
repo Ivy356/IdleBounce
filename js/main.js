@@ -39,7 +39,7 @@ var ballPoints = 0;
 var prestiged = 0; 
 var normalWidth = 1200; 
 var zoomed = false; 
-var pUpgrades = [0,0,0,0,0,0,0,0,0,0,0,0]; 
+var pUpgrades = [0,0,0,0,0,0,0,0,0,0,0,0,0]; 
 var pCountMulti = 1; 
 var strengthBoost = 5; 
 var speedMulti = 1; 
@@ -250,7 +250,8 @@ function init(){
       document.getElementById("9p").innerHTML = numberformat.format(10*(Math.pow(10,pUpgrades[8]))); 
       document.getElementById("10p").innerHTML = Math.round(100*enemyRadiusMulti); 
       document.getElementById("11p").innerHTML = 5*pUpgrades[10]; 
-      document.getElementById("12p").innerHTML = Math.round(100*ballPointMulti); 
+      document.getElementById("12p").innerHTML = Math.round(100*ballPointMulti);
+      document.getElementById("13p").innerHTML = Math.round(1.5*baseHealthMulti);
     } 
     if (typeof savegame.nightMode !== "undefined" && savegame.nightMode){ 
       toggleNightMode(); 
@@ -770,6 +771,14 @@ function prestigeUpgrade(id){
             ballPoints -= 5; 
             ballPointMulti = 1 + (0.1 * pUpgrades[id-1]); 
             document.getElementById(id+"p").innerHTML = Math.round(100*ballPointMulti); 
+        }
+        break;
+    case 13: 
+        if(ballPoints >= 5 && pUpgrades[id-1]<20){
+            pUpgrades[id-1]++; 
+            ballPoints -= 5; 
+            baseHealthMulti = 1 - (0.01 * pUpgrades[id-1]); 
+            document.getElementById(id+"p").innerHTML = Math.round(1.5*baseHealthMulti); 
         } 
     } 
     document.getElementById("BP").innerHTML = ballPoints; 
