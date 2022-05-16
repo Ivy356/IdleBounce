@@ -20,7 +20,9 @@ var balls = [
   {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,bDamage:10e31,rank:0,cost:10e32,id:9,clone:false,speed:5},
   {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#000500",radius:27.5,bDamage:1e47,rank:0,cost:1e48,id:10,clone:false,speed:8},
   {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#002500",radius:27.5,bDamage:1e61,rank:0,cost:1e62,id:11,clone:false,speed:7},
-  {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#300000",radius:22.5,bDamage:1e72,rank:0,cost:1e73,id:12,clone:false,speed:9} 
+  {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#300000",radius:22.5,bDamage:1e72,rank:0,cost:1e73,id:12,clone:false,speed:9},
+  {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#750000",radius:25,bDamage:1e86,rank:0,cost:1e87,id:13,clone:false,speed:6},
+  {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#500000",radius:20,bDamage:1e100,rank:0,cost:1e101,id:14,clone:false,speed:11}
 ];
 var clickBalls = [ 
   {active:false,x:300,y:200,dx:-.707,dy:.707,color:"#666666",radius:20,bDamage:25,rank:1,cost:10,id:100,clone:false,speed:4}, 
@@ -609,7 +611,9 @@ function prestige(){
         {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,bDamage:10e31,rank:0,cost:10e32,id:9,clone:false,speed:5},
         {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#000500",radius:27.5,bDamage:1e47,rank:0,cost:1e48,id:10,clone:false,speed:8},
         {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#002500",radius:27.5,bDamage:1e61,rank:0,cost:1e62,id:11,clone:false,speed:7},
-        {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#300000",radius:22.5,bDamage:1e72,rank:0,cost:1e73,id:12,clone:false,speed:9}
+        {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#300000",radius:22.5,bDamage:1e72,rank:0,cost:1e73,id:12,clone:false,speed:9},
+        {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#750000",radius:25,bDamage:1e86,rank:0,cost:1e87,id:13,clone:false,speed:6},
+        {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#500000",radius:20,bDamage:1e100,rank:0,cost:1e101,id:14,clone:false,speed:11}
       ];
       if(notationScientfic){ 
           for(var p = 0; p < startingBalls; p++){ 
