@@ -6,7 +6,7 @@ var level = 1;
 var click = {multi: 1.2,rank: 1, bCost: 10,bDamage:100} 
 var baseCostMulti = 1.15; 
 var baseHealthMulti = 1.5; 
-var startingBalls = 12; 
+var startingBalls = 13; 
 var balls = [ 
   {active:false,x:200,y:200,dx:.707,dy:.707,color:"#5555ff",radius:15,bDamage:10,rank:0,cost:10,id:0,clone:false,speed:5}, 
   {active:false,x:300,y:300,dx:.707,dy:-.707,color:"#00ff00",radius:12.5,bDamage:100,rank:0,cost:300,id:1,clone:false,speed:6}, 
@@ -17,9 +17,7 @@ var balls = [
   {active:false,x:1200,y:300,dx:.707,dy:.707,color:"#00C7D1",radius:12.5,bDamage:12.5e17,rank:0,cost:12.5e18,id:6,clone:false,speed:6.5}, 
   {active:false,x:1100,y:400,dx:-.707,dy:-.707,color:"#EE33A1",radius:5,bDamage:175e20,rank:0,cost:175e21,id:7,clone:false,speed:9.5}, 
   {active:false,x:300,y:500,dx:.707,dy:-.707,color:"#2ED371",radius:20,bDamage:650e26,rank:0,cost:650e27,id:8,clone:false,speed:4}, 
-  {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,bDamage:10e32,rank:0,cost:10e33,id:9,clone:false,speed:5} 
-];
-var specialBalls = [ 
+  {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,bDamage:10e32,rank:0,cost:10e33,id:9,clone:false,speed:5},
   {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#000500",radius:27.5,bDamage:1e47,rank:0,cost:1e48,id:10,clone:false,speed:8},
   {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#002500",radius:27.5,bDamage:1e61,rank:0,cost:1e62,id:10,clone:false,speed:7},
   {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#300000",radius:22.5,bDamage:1e72,rank:0,cost:1e73,id:10,clone:false,speed:9} 
@@ -587,13 +585,11 @@ function prestige(){
         {active:false,x:1200,y:300,dx:.707,dy:.707,color:"#00C7D1",radius:12.5,bDamage:12.5e17,rank:0,cost:12.5e18,id:6,clone:false,speed:6.5}, 
         {active:false,x:1100,y:400,dx:-.707,dy:-.707,color:"#EE33A1",radius:5,bDamage:175e20,rank:0,cost:175e21,id:7,clone:false,speed:9.5}, 
         {active:false,x:300,y:500,dx:.707,dy:-.707,color:"#2ED371",radius:20,bDamage:650e26,rank:0,cost:650e27,id:8,clone:false,speed:4}, 
-        {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,bDamage:10e32,rank:0,cost:10e33,id:9,clone:false,speed:5}
-      ];
-      specialballs = [
+        {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,bDamage:10e32,rank:0,cost:10e33,id:9,clone:false,speed:5},
         {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#000500",radius:27.5,bDamage:1e47,rank:0,cost:1e48,id:10,clone:false,speed:8},
         {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#002500",radius:27.5,bDamage:1e61,rank:0,cost:1e62,id:10,clone:false,speed:7},
-        {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#300000",radius:22.5,bDamage:1e72,rank:0,cost:1e73,id:10,clone:false,speed:9} 
-      ]; 
+        {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#300000",radius:22.5,bDamage:1e72,rank:0,cost:1e73,id:10,clone:false,speed:9}
+      ];
       if(notationScientfic){ 
           for(var p = 0; p < startingBalls; p++){ 
               document.getElementById(p+"T").innerHTML = "Buy"; 
