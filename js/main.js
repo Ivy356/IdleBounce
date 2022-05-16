@@ -6,7 +6,7 @@ var level = 1;
 var click = {multi: 1.2,rank: 1, bCost: 10,bDamage:25} 
 var baseCostMulti = 1.15; 
 var baseHealthMulti = 1.5; 
-var startingBalls = 13; 
+var startingBalls = 15; 
 var balls = [ 
   {active:false,x:200,y:200,dx:.707,dy:.707,color:"#5555ff",radius:15,bDamage:10,rank:0,cost:10,id:0,clone:false,speed:5}, 
   {active:false,x:300,y:300,dx:.707,dy:-.707,color:"#00ff00",radius:12.5,bDamage:100,rank:0,cost:300,id:1,clone:false,speed:6}, 
@@ -41,7 +41,7 @@ var normalWidth = 1200;
 var zoomed = false; 
 var pUpgrades = [0,0,0,0,0,0,0,0,0,0,0,0]; 
 var pCountMulti = 1; 
-var strengthBoost = 10; 
+var strengthBoost = 5; 
 var speedMulti = 1; 
 var radiusMulti = 1; 
 var animationSpeed = 0; 
@@ -228,8 +228,8 @@ function init(){
         bondRate = 0.01; 
       } 
       pCountMulti = (((Math.floor((balls.length-deactiveBalls)/5))*(0.3*pUpgrades[1]))+1); 
-      strengthBoostReq = 25-pUpgrades[2]; 
-      strengthBoost = 3+pUpgrades[3]; 
+      strengthBoostReq = 100-pUpgrades[2]; 
+      strengthBoost = 5+pUpgrades[3]; 
       speedMulti = (0.1*pUpgrades[4])+1; 
       radiusMulti = 1 +(0.1*pUpgrades[5]); 
       exciteRate = pUpgrades[6]; 
