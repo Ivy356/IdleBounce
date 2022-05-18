@@ -238,7 +238,8 @@ function init(){
       } 
       cloneReq = 50-pUpgrades[7]; 
       enemyRadiusMulti = 1 + (0.1 * pUpgrades[9]); 
-      ballPointMulti = 1 + (0.1 * pUpgrades[11]); 
+      ballPointMulti = 1 + (0.1 * pUpgrades[11]);
+      baseHealthMulti = 1 + (0.01 - pUpgrades[12]);
       document.getElementById("1p").innerHTML = bondRate; 
       document.getElementById("2p").innerHTML = Math.round(((0.3*pUpgrades[1])+1)*100); 
       document.getElementById("3p").innerHTML = strengthBoostReq; 
@@ -777,7 +778,7 @@ function prestigeUpgrade(id){
         if(ballPoints >= 5 && pUpgrades[id-1]<20){
             pUpgrades[id-1]++; 
             ballPoints -= 5; 
-            baseHealthMulti = 1 - (0.01 * pUpgrades[id-1]); 
+            baseHealthMulti = 1 + (0.01 - pUpgrades[id-1]); 
             document.getElementById(id+"p").innerHTML = Math.round(1.5*baseHealthMulti); 
         } 
     } 
