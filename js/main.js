@@ -252,7 +252,7 @@ function init(){
       document.getElementById("10p").innerHTML = Math.round(100*enemyRadiusMulti); 
       document.getElementById("11p").innerHTML = 5*pUpgrades[10]; 
       document.getElementById("12p").innerHTML = Math.round(100*ballPointMulti);
-      document.getElementById("13p").innerHTML = Math.round(100*baseHealthMulti);
+      document.getElementById("13p").innerHTML = Math.round(150*baseHealthMulti);
     } 
     if (typeof savegame.nightMode !== "undefined" && savegame.nightMode){ 
       toggleNightMode(); 
@@ -787,7 +787,7 @@ function prestigeUpgrade(id){
             pUpgrades[id-1]++; 
             ballPoints -= 5; 
             baseHealthMulti = 1 + (-0.1 * pUpgrades[id-1]); 
-            document.getElementById(id+"p").innerHTML = Math.round(100*baseHealthMulti);
+            document.getElementById(id+"p").innerHTML = Math.round(150*baseHealthMulti);
         } 
     } 
     document.getElementById("BP").innerHTML = ballPoints; 
