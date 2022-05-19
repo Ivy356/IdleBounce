@@ -778,9 +778,8 @@ function prestigeUpgrade(id){
         if(ballPoints >= 5 && pUpgrades[id-1]<20){
             pUpgrades[id-1]++; 
             ballPoints -= 5; 
-            baseHealthMulti = 1 + (0.01 -* pUpgrades[id-1]); 
-            document.getElementById(id+"p").innerHTML = Math.round(1.5*baseHealthMulti); 
-            document.getElementById(id+"b").innerHTML = Math.pow(1.5,pUpgrades[id-1]); 
+            baseHealthMulti = 1 + (-0.01 * pUpgrades[id-1]); 
+            document.getElementById(id+"p").innerHTML = Math.round(1.5*baseHealthMulti);
         } 
     } 
     document.getElementById("BP").innerHTML = ballPoints; 
