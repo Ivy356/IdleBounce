@@ -13,10 +13,10 @@ var balls = [
   {active:false,x:100,y:100,dx:-.707,dy:.707,color:"#ff0000",radius:21.5,bDamage:2500,rank:0,cost:20000,id:2,clone:false,speed:4}, 
   {active:false,x:400,y:400,dx:-.707,dy:-.707,color:"#ffff00",radius:15,bDamage:100000,rank:0,cost:1000000,id:3,clone:false,speed:7.5}, 
   {active:false,x:900,y:300,dx:-.707,dy:.707,color:"#FFA500",radius:10,bDamage:4e8,rank:0,cost:5e9,id:4,clone:false,speed:5.5}, 
-  {active:false,x:1000,y:200,dx:-.707,dy:-.707,color:"#800080",radius:30,bDamage:3.5e12,rank:0,cost:4e13,id:5,clone:false,speed:3}, 
-  {active:false,x:1200,y:300,dx:.707,dy:.707,color:"#00C7D1",radius:12.5,bDamage:6.5e14,rank:0,cost:7.5e15,id:6,clone:false,speed:6.5}, 
-  {active:false,x:1100,y:400,dx:-.707,dy:-.707,color:"#EE33A1",radius:5,bDamage:125e17,rank:0,cost:175e18,id:7,clone:false,speed:9.5}, 
-  {active:false,x:300,y:500,dx:.707,dy:-.707,color:"#2ED371",radius:20,bDamage:550e22,rank:0,cost:650e23,id:8,clone:false,speed:4}, 
+  {active:false,x:1000,y:200,dx:-.707,dy:-.707,color:"#800080",radius:30,bDamage:1.75e11,rank:0,cost:2e12,id:5,clone:false,speed:3}, 
+  {active:false,x:1200,y:300,dx:.707,dy:.707,color:"#00C7D1",radius:12.5,bDamage:5.75e14,rank:0,cost:6.5e15,id:6,clone:false,speed:6.5}, 
+  {active:false,x:1100,y:400,dx:-.707,dy:-.707,color:"#EE33A1",radius:5,bDamage:87.5e17,rank:0,cost:125e18,id:7,clone:false,speed:9.5}, 
+  {active:false,x:300,y:500,dx:.707,dy:-.707,color:"#2ED371",radius:20,bDamage:250e22,rank:0,cost:350e23,id:8,clone:false,speed:4}, 
   {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,bDamage:6e29,rank:0,cost:9e30,id:9,clone:false,speed:5},
   {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#000500",radius:27.5,bDamage:1e47,rank:0,cost:1e48,id:10,clone:false,speed:8},
   {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#002500",radius:27.5,bDamage:1e61,rank:0,cost:1e62,id:11,clone:false,speed:7},
@@ -548,6 +548,10 @@ function toggleNightMode(){
     document.getElementById("p13").style.color = "#000000";
     document.getElementById("p14").style.color = "#000000";
     document.getElementById("p15").style.color = "#000000";
+    document.getElementById("patch1").style.color = "#000000";
+    document.getElementById("patch2").style.color = "#000000";
+    document.getElementById("update1").style.color = "#000000";
+    document.getElementById("update2").style.color = "#000000";
     document.getElementById("myCanvas").style.border = "3px solid #000000"; 
     document.getElementById("Balls").style.border = "1px solid #000000"; 
     document.getElementById("Special").style.border = "1px solid #000000";
@@ -575,6 +579,10 @@ function toggleNightMode(){
     document.getElementById("p13").style.color = "#ffffff";
     document.getElementById("p14").style.color = "#ffffff";
     document.getElementById("p15").style.color = "#ffffff";
+    document.getElementById("patch1").style.color = "#ffffff"; 
+    document.getElementById("patch2").style.color = "#ffffff";
+    document.getElementById("update1").style.color = "#ffffff";
+    document.getElementById("update2").style.color = "#ffffff";
     document.getElementById("myCanvas").style.border = "3px solid #ffffff"; 
     document.getElementById("Balls").style.border = "1px solid #ffffff"; 
     document.getElementById("Special").style.border = "1px solid #ffffff";
@@ -593,7 +601,7 @@ function wipeSave(){
 } 
 function prestige(){ 
   if(level >= 100){ 
-    if(confirm("Are you sure you want to Prestige? This will get rid of all your numbers, all your levels and all your ball upgrades/clones. It will not get rid of Achievements or Prestige Upgrades. By prestiging you will get 1 Ball Point which gives you 100% more income (additive)") == true){ 
+    if(confirm("Are you sure you want to Prestige? This will get rid of all your numbers, all your levels and all your ball upgrades/clones. It will not get rid of Achievements, Prestige Upgrades and Special Balls. By prestiging you will get 1 Ball Point which gives you 100% more income (additive)") == true){ 
       ballPoints += Math.pow(2,(Math.floor((level-100)/20))); 
       prestiged++; 
       level = (5*pUpgrades[10]); 
@@ -606,10 +614,10 @@ function prestige(){
         {active:false,x:100,y:100,dx:-.707,dy:.707,color:"#ff0000",radius:21.5,bDamage:2500,rank:0,cost:20000,id:2,clone:false,speed:4}, 
         {active:false,x:400,y:400,dx:-.707,dy:-.707,color:"#ffff00",radius:15,bDamage:100000,rank:0,cost:1000000,id:3,clone:false,speed:7.5}, 
         {active:false,x:900,y:300,dx:-.707,dy:.707,color:"#FFA500",radius:10,bDamage:4e8,rank:0,cost:5e9,id:4,clone:false,speed:5.5}, 
-        {active:false,x:1000,y:200,dx:-.707,dy:-.707,color:"#800080",radius:30,bDamage:3.5e12,rank:0,cost:4e13,id:5,clone:false,speed:3}, 
-        {active:false,x:1200,y:300,dx:.707,dy:.707,color:"#00C7D1",radius:12.5,bDamage:6.5e14,rank:0,cost:7.5e15,id:6,clone:false,speed:6.5}, 
-        {active:false,x:1100,y:400,dx:-.707,dy:-.707,color:"#EE33A1",radius:5,bDamage:125e17,rank:0,cost:175e18,id:7,clone:false,speed:9.5}, 
-        {active:false,x:300,y:500,dx:.707,dy:-.707,color:"#2ED371",radius:20,bDamage:550e22,rank:0,cost:650e23,id:8,clone:false,speed:4}, 
+        {active:false,x:1000,y:200,dx:-.707,dy:-.707,color:"#800080",radius:30,bDamage:1.75e11,rank:0,cost:2e12,id:5,clone:false,speed:3}, 
+        {active:false,x:1200,y:300,dx:.707,dy:.707,color:"#00C7D1",radius:12.5,bDamage:5.75e14,rank:0,cost:6.5e15,id:6,clone:false,speed:6.5}, 
+        {active:false,x:1100,y:400,dx:-.707,dy:-.707,color:"#EE33A1",radius:5,bDamage:87.5e17,rank:0,cost:125e18,id:7,clone:false,speed:9.5}, 
+        {active:false,x:300,y:500,dx:.707,dy:-.707,color:"#2ED371",radius:20,bDamage:250e22,rank:0,cost:350e23,id:8,clone:false,speed:4}, 
         {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,bDamage:6e29,rank:0,cost:9e30,id:9,clone:false,speed:5},
         {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#000500",radius:27.5,bDamage:1e47,rank:0,cost:1e48,id:10,clone:false,speed:8},
         {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#002500",radius:27.5,bDamage:1e61,rank:0,cost:1e62,id:11,clone:false,speed:7},
