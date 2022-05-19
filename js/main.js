@@ -8,16 +8,16 @@ var baseCostMulti = 1.15;
 var baseHealthMulti = 1.5; 
 var startingBalls = 15; 
 var balls = [ 
-  {active:false,x:200,y:200,dx:.707,dy:.707,color:"#5555ff",radius:15,bDamage:10,rank:0,cost:10,id:0,clone:false,speed:5}, 
-  {active:false,x:300,y:300,dx:.707,dy:-.707,color:"#00ff00",radius:12.5,bDamage:100,rank:0,cost:300,id:1,clone:false,speed:6}, 
-  {active:false,x:100,y:100,dx:-.707,dy:.707,color:"#ff0000",radius:21.5,bDamage:2500,rank:0,cost:20000,id:2,clone:false,speed:4}, 
-  {active:false,x:400,y:400,dx:-.707,dy:-.707,color:"#ffff00",radius:15,bDamage:100000,rank:0,cost:1000000,id:3,clone:false,speed:7.5}, 
-  {active:false,x:900,y:300,dx:-.707,dy:.707,color:"#FFA500",radius:10,bDamage:4e8,rank:0,cost:5e9,id:4,clone:false,speed:5.5}, 
-  {active:false,x:1000,y:200,dx:-.707,dy:-.707,color:"#800080",radius:30,bDamage:1.75e11,rank:0,cost:2e12,id:5,clone:false,speed:3}, 
-  {active:false,x:1200,y:300,dx:.707,dy:.707,color:"#00C7D1",radius:12.5,bDamage:5.75e14,rank:0,cost:6.5e15,id:6,clone:false,speed:6.5}, 
-  {active:false,x:1100,y:400,dx:-.707,dy:-.707,color:"#EE33A1",radius:5,bDamage:87.5e17,rank:0,cost:125e18,id:7,clone:false,speed:9.5}, 
-  {active:false,x:300,y:500,dx:.707,dy:-.707,color:"#2ED371",radius:20,bDamage:250e22,rank:0,cost:350e23,id:8,clone:false,speed:4}, 
-  {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,bDamage:6e29,rank:0,cost:9e30,id:9,clone:false,speed:5},
+  {active:false,x:200,y:200,dx:.707,dy:.707,color:"#5555ff",radius:15,baseCostMulti:1.1,bDamage:10,rank:0,cost:10,id:0,clone:false,speed:5}, 
+  {active:false,x:300,y:300,dx:.707,dy:-.707,color:"#00ff00",radius:12.5,baseCostMulti:1.25,bDamage:100,rank:0,cost:300,id:1,clone:false,speed:6}, 
+  {active:false,x:100,y:100,dx:-.707,dy:.707,color:"#ff0000",radius:21.5,baseCostMulti:1.225,bDamage:2500,rank:0,cost:20000,id:2,clone:false,speed:4}, 
+  {active:false,x:400,y:400,dx:-.707,dy:-.707,color:"#ffff00",radius:15,baseCostMulti:1.2,bDamage:100000,rank:0,cost:1000000,id:3,clone:false,speed:7.5}, 
+  {active:false,x:900,y:300,dx:-.707,dy:.707,color:"#FFA500",radius:10,baseCostMulti:1.175,bDamage:4e8,rank:0,cost:5e9,id:4,clone:false,speed:5.5}, 
+  {active:false,x:1000,y:200,dx:-.707,dy:-.707,color:"#800080",radius:30,baseCostMulti:1.15,bDamage:1.75e11,rank:0,cost:2e12,id:5,clone:false,speed:3}, 
+  {active:false,x:1200,y:300,dx:.707,dy:.707,color:"#00C7D1",radius:12.5,baseCostMulti:1.14,bDamage:5.75e14,rank:0,cost:6.5e15,id:6,clone:false,speed:6.5}, 
+  {active:false,x:1100,y:400,dx:-.707,dy:-.707,color:"#EE33A1",radius:5,baseCostMulti:1.13,bDamage:87.5e17,rank:0,cost:125e18,id:7,clone:false,speed:9.5}, 
+  {active:false,x:300,y:500,dx:.707,dy:-.707,color:"#2ED371",radius:20,baseCostMulti:1.12,bDamage:250e22,rank:0,cost:350e23,id:8,clone:false,speed:4}, 
+  {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,baseCostMulti:1.11,bDamage:6e29,rank:0,cost:9e30,id:9,clone:false,speed:5},
   {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#000500",radius:27.5,bDamage:1e47,rank:0,cost:1e48,id:10,clone:false,speed:8},
   {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#002500",radius:27.5,bDamage:1e61,rank:0,cost:1e62,id:11,clone:false,speed:7},
   {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#300000",radius:22.5,bDamage:1e72,rank:0,cost:1e73,id:12,clone:false,speed:9},
@@ -239,7 +239,7 @@ function init(){
       cloneReq = 50-pUpgrades[7]; 
       enemyRadiusMulti = 1 + (0.1 * pUpgrades[9]); 
       ballPointMulti = 1 + (0.1 * pUpgrades[11]);
-      baseHealthMulti = 1 + (-0.01 * pUpgrades[12]);
+      baseHealthMulti = 1 + (-0.1 * pUpgrades[12]);
       document.getElementById("1p").innerHTML = bondRate; 
       document.getElementById("2p").innerHTML = Math.round(((0.3*pUpgrades[1])+1)*100); 
       document.getElementById("3p").innerHTML = strengthBoostReq; 
@@ -252,7 +252,7 @@ function init(){
       document.getElementById("10p").innerHTML = Math.round(100*enemyRadiusMulti); 
       document.getElementById("11p").innerHTML = 5*pUpgrades[10]; 
       document.getElementById("12p").innerHTML = Math.round(100*ballPointMulti);
-      document.getElementById("13p").innerHTML = Math.pow(1.5,baseHealthMulti(pUpgrades[12]));
+      document.getElementById("13p").innerHTML = Math.round(100*baseHealthMulti);
     } 
     if (typeof savegame.nightMode !== "undefined" && savegame.nightMode){ 
       toggleNightMode(); 
@@ -783,11 +783,11 @@ function prestigeUpgrade(id){
         }
         break;
     case 13: 
-        if(ballPoints >= 5 && pUpgrades[id-1]<20){
+        if(ballPoints >= 5 && pUpgrades[id-1]<10){
             pUpgrades[id-1]++; 
             ballPoints -= 5; 
-            baseHealthMulti = 1 + (-0.01 * pUpgrades[id-1]); 
-            document.getElementById(id+"p").innerHTML = Math.pow(1.5,baseHealthMulti[id-1]);
+            baseHealthMulti = 1 + (-0.1 * pUpgrades[id-1]); 
+            document.getElementById(id+"p").innerHTML = Math.round(100*baseHealthMulti);
         } 
     } 
     document.getElementById("BP").innerHTML = ballPoints; 
