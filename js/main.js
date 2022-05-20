@@ -15,14 +15,16 @@ var balls = [
   {active:false,x:900,y:300,dx:-.707,dy:.707,color:"#FFA500",radius:10,multi:1.175,bDamage:6750000,rank:0,cost:75000000,id:4,clone:false,speed:5.5}, 
   {active:false,x:1000,y:200,dx:-.707,dy:-.707,color:"#800080",radius:30,multi:1.15,bDamage:5.75e8,rank:0,cost:6.5e9,id:5,clone:false,speed:3}, 
   {active:false,x:1200,y:300,dx:.707,dy:.707,color:"#00C7D1",radius:12.5,multi:1.14,bDamage:8e10,rank:0,cost:1e12,id:6,clone:false,speed:6.5}, 
-  {active:false,x:1100,y:400,dx:-.707,dy:-.707,color:"#EE33A1",radius:5,multi:1.13,bDamage:87.5e17,rank:0,cost:125e18,id:7,clone:false,speed:9.5}, 
-  {active:false,x:300,y:500,dx:.707,dy:-.707,color:"#2ED371",radius:20,multi:1.12,bDamage:250e22,rank:0,cost:350e23,id:8,clone:false,speed:4}, 
-  {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,multi:1.11,bDamage:6e29,rank:0,cost:9e30,id:9,clone:false,speed:5},
-  {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#000500",radius:27.5,multi:1.15,bDamage:1e47,rank:0,cost:1e48,id:10,clone:false,speed:8},
-  {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#002500",radius:27.5,multi:1.15,bDamage:1e61,rank:0,cost:1e62,id:11,clone:false,speed:7},
-  {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#300000",radius:22.5,multi:1.15,bDamage:1e72,rank:0,cost:1e73,id:12,clone:false,speed:9},
-  {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#750000",radius:25,multi:1.15,bDamage:1e86,rank:0,cost:1e87,id:13,clone:false,speed:6},
-  {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#500000",radius:20,multi:1.15,bDamage:1e100,rank:0,cost:1e101,id:14,clone:false,speed:11}
+  {active:false,x:1100,y:400,dx:-.707,dy:-.707,color:"#EE33A1",radius:5,multi:1.13,bDamage:3e15,rank:0,cost:4.5e16,id:7,clone:false,speed:9.5}, 
+  {active:false,x:300,y:500,dx:.707,dy:-.707,color:"#2ED371",radius:20,multi:1.12,bDamage:1.25e19,rank:0,cost:2.75e20,id:8,clone:false,speed:4}, 
+  {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,multi:1.11,bDamage:1e22,rank:0,cost:4e23,id:9,clone:false,speed:5},
+  {active:false,x:500,y:700,dx:-.707,dy:.707,color:"#34D3A0",radius:10,multi:1.105,bDamage:2e25,rank:0,cost:9e26,id:10,clone:false,speed:8.5},
+  {active:false,x:200,y:900,dx:-.707,dy:.707,color:"#AA789F",radius:23.5,multi:1.1,bDamage:5e29,rank:0,cost:1.5e31,id:11,clone:false,speed:5},
+  {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#000500",radius:27.5,multi:1.15,bDamage:1e47,rank:0,cost:1e48,id:12,clone:false,speed:8},
+  {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#002500",radius:27.5,multi:1.15,bDamage:1e61,rank:0,cost:1e62,id:13,clone:false,speed:7},
+  {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#300000",radius:22.5,multi:1.15,bDamage:1e72,rank:0,cost:1e73,id:14,clone:false,speed:9},
+  {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#750000",radius:25,multi:1.15,bDamage:1e86,rank:0,cost:1e87,id:15,clone:false,speed:6},
+  {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#500000",radius:20,multi:1.15,bDamage:1e100,rank:0,cost:1e101,id:16,clone:false,speed:11}
 ];
 var clickBalls = [ 
   {active:false,x:300,y:200,dx:-.707,dy:.707,color:"#666666",radius:20,bDamage:25,rank:1,cost:10,id:100,clone:false,speed:4}, 
