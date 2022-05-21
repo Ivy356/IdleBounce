@@ -6,9 +6,9 @@ var level = 1;
 var click = {multi: 1.2,rank: 1, bCost: 10,bDamage:25} 
 var baseCostMulti = 1.15; 
 var baseHealthMulti = 1.5; 
-var startingBalls = 15; 
+var startingBalls = 17; 
 var balls = [ 
-  {active:false,x:200,y:200,dx:.707,dy:.707,color:"#5555ff",radius:15,multi:1.1,bDamage:10,rank:0,cost:10,id:0,clone:false,speed:5}, 
+  {active:false,x:200,y:200,dx:.707,dy:.707,color:"#5555ff",radius:15,multi:1.09,bDamage:10,rank:0,cost:10,id:0,clone:false,speed:5}, 
   {active:false,x:300,y:300,dx:.707,dy:-.707,color:"#00ff00",radius:12.5,multi:1.25,bDamage:100,rank:0,cost:300,id:1,clone:false,speed:6}, 
   {active:false,x:100,y:100,dx:-.707,dy:.707,color:"#ff0000",radius:21.5,multi:1.225,bDamage:750,rank:0,cost:5000,id:2,clone:false,speed:4}, 
   {active:false,x:400,y:400,dx:-.707,dy:-.707,color:"#ffff00",radius:15,multi:1.2,bDamage:20000,rank:0,cost:200000,id:3,clone:false,speed:7.5}, 
@@ -365,7 +365,7 @@ function newLevel(prest) {
   } 
 } 
 function spawnEnemies(){ 
-  if(level%10 == 0){ 
+  if(level%20 == 0){ 
     var healthTemp = Math.floor(10000*Math.pow(baseHealthMulti,level-1)); 
     enemies.push({x:width/2,y:height/2,health:healthTemp,sHealth:healthTemp,active:true,radius:(height/2)-100}); 
     var boss = enemies[0]; 
@@ -552,8 +552,22 @@ function toggleNightMode(){
     document.getElementById("p15").style.color = "#000000";
     document.getElementById("patch1").style.color = "#000000";
     document.getElementById("patch2").style.color = "#000000";
+    document.getElementById("patch3").style.color = "#000000";
+    document.getElementById("patch4").style.color = "#000000";
+    document.getElementById("patch5").style.color = "#000000";
+    document.getElementById("patch6").style.color = "#000000";
+    document.getElementById("patch7").style.color = "#000000";
+    document.getElementById("patch8").style.color = "#000000";
+    document.getElementById("patch9").style.color = "#000000";
     document.getElementById("update1").style.color = "#000000";
     document.getElementById("update2").style.color = "#000000";
+    document.getElementById("update3").style.color = "#000000";
+    document.getElementById("update4").style.color = "#000000";
+    document.getElementById("update5").style.color = "#000000";
+    document.getElementById("update6").style.color = "#000000";
+    document.getElementById("update7").style.color = "#000000";
+    document.getElementById("update8").style.color = "#000000";
+    document.getElementById("update9").style.color = "#000000";
     document.getElementById("myCanvas").style.border = "3px solid #000000"; 
     document.getElementById("Balls").style.border = "1px solid #000000"; 
     document.getElementById("Special").style.border = "1px solid #000000";
@@ -583,8 +597,22 @@ function toggleNightMode(){
     document.getElementById("p15").style.color = "#ffffff";
     document.getElementById("patch1").style.color = "#ffffff"; 
     document.getElementById("patch2").style.color = "#ffffff";
+    document.getElementById("patch3").style.color = "#ffffff"; 
+    document.getElementById("patch4").style.color = "#ffffff";
+    document.getElementById("patch5").style.color = "#ffffff"; 
+    document.getElementById("patch6").style.color = "#ffffff";
+    document.getElementById("patch7").style.color = "#ffffff"; 
+    document.getElementById("patch8").style.color = "#ffffff";
+    document.getElementById("patch9").style.color = "#ffffff"; 
     document.getElementById("update1").style.color = "#ffffff";
     document.getElementById("update2").style.color = "#ffffff";
+    document.getElementById("update3").style.color = "#ffffff";
+    document.getElementById("update4").style.color = "#ffffff";
+    document.getElementById("update5").style.color = "#ffffff";
+    document.getElementById("update6").style.color = "#ffffff";
+    document.getElementById("update7").style.color = "#ffffff";
+    document.getElementById("update8").style.color = "#ffffff";
+    document.getElementById("update9").style.color = "#ffffff";
     document.getElementById("myCanvas").style.border = "3px solid #ffffff"; 
     document.getElementById("Balls").style.border = "1px solid #ffffff"; 
     document.getElementById("Special").style.border = "1px solid #ffffff";
@@ -611,7 +639,7 @@ function prestige(){
       click.bDamage = 25; 
       value = 10 * Math.pow(10,pUpgrades[8]); 
       balls = [ 
-        {active:false,x:200,y:200,dx:.707,dy:.707,color:"#5555ff",radius:15,multi:1.1,bDamage:10,rank:0,cost:10,id:0,clone:false,speed:5}, 
+        {active:false,x:200,y:200,dx:.707,dy:.707,color:"#5555ff",radius:15,multi:1.09,bDamage:10,rank:0,cost:10,id:0,clone:false,speed:5}, 
         {active:false,x:300,y:300,dx:.707,dy:-.707,color:"#00ff00",radius:12.5,multi:1.25,bDamage:100,rank:0,cost:300,id:1,clone:false,speed:6}, 
         {active:false,x:100,y:100,dx:-.707,dy:.707,color:"#ff0000",radius:21.5,multi:1.225,bDamage:750,rank:0,cost:5000,id:2,clone:false,speed:4}, 
         {active:false,x:400,y:400,dx:-.707,dy:-.707,color:"#ffff00",radius:15,multi:1.2,bDamage:20000,rank:0,cost:200000,id:3,clone:false,speed:7.5}, 
