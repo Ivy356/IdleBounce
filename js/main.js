@@ -354,10 +354,10 @@ function newLevel(prest) {
     } 
   } 
   else{ 
-      if(level%10 == 0){ 
+      if(level%20 == 0){ 
     shrink = true; 
   } 
-  else if(level%10 == 1){ 
+  else if(level%20 == 1){ 
     shrink = false; 
   } 
   else{ 
