@@ -560,6 +560,7 @@ function toggleNightMode(){
     document.getElementById("patch7").style.color = "#000000";
     document.getElementById("patch8").style.color = "#000000";
     document.getElementById("patch9").style.color = "#000000";
+    document.getElementById("patch10").style.color = "#000000";
     document.getElementById("update1").style.color = "#000000";
     document.getElementById("update2").style.color = "#000000";
     document.getElementById("update3").style.color = "#000000";
@@ -569,6 +570,7 @@ function toggleNightMode(){
     document.getElementById("update7").style.color = "#000000";
     document.getElementById("update8").style.color = "#000000";
     document.getElementById("update9").style.color = "#000000";
+    document.getElementById("update10").style.color = "#000000";
     document.getElementById("myCanvas").style.border = "3px solid #000000"; 
     document.getElementById("Balls").style.border = "1px solid #000000"; 
     document.getElementById("Special").style.border = "1px solid #000000";
@@ -604,7 +606,8 @@ function toggleNightMode(){
     document.getElementById("patch6").style.color = "#ffffff";
     document.getElementById("patch7").style.color = "#ffffff"; 
     document.getElementById("patch8").style.color = "#ffffff";
-    document.getElementById("patch9").style.color = "#ffffff"; 
+    document.getElementById("patch9").style.color = "#ffffff";
+    document.getElementById("patch10").style.color = "#ffffff"; 
     document.getElementById("update1").style.color = "#ffffff";
     document.getElementById("update2").style.color = "#ffffff";
     document.getElementById("update3").style.color = "#ffffff";
@@ -614,6 +617,7 @@ function toggleNightMode(){
     document.getElementById("update7").style.color = "#ffffff";
     document.getElementById("update8").style.color = "#ffffff";
     document.getElementById("update9").style.color = "#ffffff";
+    document.getElementById("update10").style.color = "#ffffff";
     document.getElementById("myCanvas").style.border = "3px solid #ffffff"; 
     document.getElementById("Balls").style.border = "1px solid #ffffff"; 
     document.getElementById("Special").style.border = "1px solid #ffffff";
