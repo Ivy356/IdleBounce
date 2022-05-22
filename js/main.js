@@ -9,17 +9,17 @@ var baseHealthMulti = 1.5;
 var startingBalls = 17; 
 var balls = [ 
   {active:false,x:200,y:200,dx:.707,dy:.707,color:"#5555ff",radius:15,multi:1.09,bDamage:10,rank:0,cost:10,id:0,clone:false,speed:5}, 
-  {active:false,x:300,y:300,dx:.707,dy:-.707,color:"#00ff00",radius:12.5,multi:1.25,bDamage:100,rank:0,cost:300,id:1,clone:false,speed:6}, 
-  {active:false,x:100,y:100,dx:-.707,dy:.707,color:"#ff0000",radius:21.5,multi:1.225,bDamage:750,rank:0,cost:5000,id:2,clone:false,speed:4}, 
-  {active:false,x:400,y:400,dx:-.707,dy:-.707,color:"#ffff00",radius:15,multi:1.2,bDamage:20000,rank:0,cost:200000,id:3,clone:false,speed:7.5}, 
-  {active:false,x:900,y:300,dx:-.707,dy:.707,color:"#FFA500",radius:10,multi:1.175,bDamage:6750000,rank:0,cost:75000000,id:4,clone:false,speed:5.5}, 
-  {active:false,x:1000,y:200,dx:-.707,dy:-.707,color:"#800080",radius:30,multi:1.15,bDamage:5.75e8,rank:0,cost:6.5e9,id:5,clone:false,speed:3}, 
-  {active:false,x:1200,y:300,dx:.707,dy:.707,color:"#00C7D1",radius:12.5,multi:1.14,bDamage:8e10,rank:0,cost:1e12,id:6,clone:false,speed:6.5}, 
-  {active:false,x:1100,y:400,dx:-.707,dy:-.707,color:"#EE33A1",radius:5,multi:1.13,bDamage:3e15,rank:0,cost:4.5e16,id:7,clone:false,speed:9.5}, 
-  {active:false,x:300,y:500,dx:.707,dy:-.707,color:"#2ED371",radius:20,multi:1.12,bDamage:1.25e19,rank:0,cost:2.75e20,id:8,clone:false,speed:4}, 
-  {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,multi:1.11,bDamage:1e22,rank:0,cost:4e23,id:9,clone:false,speed:5},
-  {active:false,x:500,y:700,dx:-.707,dy:.707,color:"#34D3A0",radius:10,multi:1.105,bDamage:2e25,rank:0,cost:9e26,id:10,clone:false,speed:8.5},
-  {active:false,x:200,y:900,dx:-.707,dy:.707,color:"#AA789F",radius:23.5,multi:1.1,bDamage:5e29,rank:0,cost:1.5e31,id:11,clone:false,speed:5},
+  {active:false,x:300,y:300,dx:.707,dy:-.707,color:"#00ff00",radius:12.5,multi:1.3,bDamage:100,rank:0,cost:300,id:1,clone:false,speed:6}, 
+  {active:false,x:100,y:100,dx:-.707,dy:.707,color:"#ff0000",radius:21.5,multi:1.25,bDamage:750,rank:0,cost:5000,id:2,clone:false,speed:4}, 
+  {active:false,x:400,y:400,dx:-.707,dy:-.707,color:"#ffff00",radius:15,multi:1.225,bDamage:20000,rank:0,cost:200000,id:3,clone:false,speed:7.5}, 
+  {active:false,x:900,y:300,dx:-.707,dy:.707,color:"#FFA500",radius:10,multi:1.2,bDamage:6750000,rank:0,cost:75000000,id:4,clone:false,speed:5.5}, 
+  {active:false,x:1000,y:200,dx:-.707,dy:-.707,color:"#800080",radius:30,multi:1.18,bDamage:3.7e8,rank:0,cost:4e9,id:5,clone:false,speed:3}, 
+  {active:false,x:1200,y:300,dx:.707,dy:.707,color:"#00C7D1",radius:12.5,multi:1.16,bDamage:6.8e10,rank:0,cost:8.5e11,id:6,clone:false,speed:6.5}, 
+  {active:false,x:1100,y:400,dx:-.707,dy:-.707,color:"#EE33A1",radius:5,multi:1.15,bDamage:1e15,rank:0,cost:1.5e16,id:7,clone:false,speed:9.5}, 
+  {active:false,x:300,y:500,dx:.707,dy:-.707,color:"#2ED371",radius:20,multi:1.14,bDamage:3.5e18,rank:0,cost:6e19,id:8,clone:false,speed:4}, 
+  {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,multi:1.13,bDamage:8.5e21,rank:0,cost:2.5e23,id:9,clone:false,speed:5},
+  {active:false,x:500,y:700,dx:-.707,dy:.707,color:"#34D3A0",radius:10,multi:1.12,bDamage:1.65e25,rank:0,cost:6.75e26,id:10,clone:false,speed:8.5},
+  {active:false,x:200,y:900,dx:-.707,dy:.707,color:"#AA789F",radius:23.5,multi:1.1,bDamage:3.33e29,rank:0,cost:1.1e31,id:11,clone:false,speed:5},
   {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#000500",radius:27.5,multi:1.15,bDamage:1e47,rank:0,cost:1e48,id:12,clone:false,speed:8},
   {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#002500",radius:27.5,multi:1.15,bDamage:1e61,rank:0,cost:1e62,id:13,clone:false,speed:7},
   {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#300000",radius:22.5,multi:1.15,bDamage:1e72,rank:0,cost:1e73,id:14,clone:false,speed:9},
@@ -41,7 +41,7 @@ var ballPoints = 0;
 var prestiged = 0; 
 var normalWidth = 1200; 
 var zoomed = false; 
-var pUpgrades = [0,0,0,0,0,0,0,0,0,0,0,0,0]; 
+var pUpgrades = [0,0,0,0,0,0,0,0,0,0,0,0,0,0]; 
 var pCountMulti = 1; 
 var strengthBoost = 5; 
 var speedMulti = 1; 
@@ -255,6 +255,7 @@ function init(){
       document.getElementById("11p").innerHTML = 5*pUpgrades[10]; 
       document.getElementById("12p").innerHTML = Math.round(100*ballPointMulti);
       document.getElementById("13p").innerHTML = Math.round(100*baseHealthMulti);
+      document.getElementById("14p").innerHTML = numberformat.format(10*(Math.pow(10,pUpgrades[13]))); 
     } 
     if (typeof savegame.nightMode !== "undefined" && savegame.nightMode){ 
       toggleNightMode(); 
@@ -640,17 +641,17 @@ function prestige(){
       value = 10 * Math.pow(10,pUpgrades[8]); 
       balls = [ 
         {active:false,x:200,y:200,dx:.707,dy:.707,color:"#5555ff",radius:15,multi:1.09,bDamage:10,rank:0,cost:10,id:0,clone:false,speed:5}, 
-        {active:false,x:300,y:300,dx:.707,dy:-.707,color:"#00ff00",radius:12.5,multi:1.25,bDamage:100,rank:0,cost:300,id:1,clone:false,speed:6}, 
-        {active:false,x:100,y:100,dx:-.707,dy:.707,color:"#ff0000",radius:21.5,multi:1.225,bDamage:750,rank:0,cost:5000,id:2,clone:false,speed:4}, 
-        {active:false,x:400,y:400,dx:-.707,dy:-.707,color:"#ffff00",radius:15,multi:1.2,bDamage:20000,rank:0,cost:200000,id:3,clone:false,speed:7.5}, 
-        {active:false,x:900,y:300,dx:-.707,dy:.707,color:"#FFA500",radius:10,multi:1.175,bDamage:6750000,rank:0,cost:75000000,id:4,clone:false,speed:5.5}, 
-        {active:false,x:1000,y:200,dx:-.707,dy:-.707,color:"#800080",radius:30,multi:1.15,bDamage:5.75e8,rank:0,cost:6.5e9,id:5,clone:false,speed:3}, 
-        {active:false,x:1200,y:300,dx:.707,dy:.707,color:"#00C7D1",radius:12.5,multi:1.14,bDamage:8e10,rank:0,cost:1e12,id:6,clone:false,speed:6.5}, 
-        {active:false,x:1100,y:400,dx:-.707,dy:-.707,color:"#EE33A1",radius:5,multi:1.13,bDamage:3e15,rank:0,cost:4.5e16,id:7,clone:false,speed:9.5}, 
-        {active:false,x:300,y:500,dx:.707,dy:-.707,color:"#2ED371",radius:20,multi:1.12,bDamage:1.25e19,rank:0,cost:2.75e20,id:8,clone:false,speed:4}, 
-        {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,multi:1.11,bDamage:1e22,rank:0,cost:4e23,id:9,clone:false,speed:5},
-        {active:false,x:500,y:700,dx:-.707,dy:.707,color:"#34D3A0",radius:10,multi:1.105,bDamage:2e25,rank:0,cost:9e26,id:10,clone:false,speed:8.5},
-        {active:false,x:200,y:900,dx:-.707,dy:.707,color:"#AA789F",radius:23.5,multi:1.1,bDamage:5e29,rank:0,cost:1.5e31,id:11,clone:false,speed:5},
+        {active:false,x:300,y:300,dx:.707,dy:-.707,color:"#00ff00",radius:12.5,multi:1.3,bDamage:100,rank:0,cost:300,id:1,clone:false,speed:6}, 
+        {active:false,x:100,y:100,dx:-.707,dy:.707,color:"#ff0000",radius:21.5,multi:1.25,bDamage:750,rank:0,cost:5000,id:2,clone:false,speed:4}, 
+        {active:false,x:400,y:400,dx:-.707,dy:-.707,color:"#ffff00",radius:15,multi:1.225,bDamage:20000,rank:0,cost:200000,id:3,clone:false,speed:7.5}, 
+        {active:false,x:900,y:300,dx:-.707,dy:.707,color:"#FFA500",radius:10,multi:1.2,bDamage:6750000,rank:0,cost:75000000,id:4,clone:false,speed:5.5}, 
+        {active:false,x:1000,y:200,dx:-.707,dy:-.707,color:"#800080",radius:30,multi:1.18,bDamage:3.7e8,rank:0,cost:4e9,id:5,clone:false,speed:3}, 
+        {active:false,x:1200,y:300,dx:.707,dy:.707,color:"#00C7D1",radius:12.5,multi:1.16,bDamage:6.8e10,rank:0,cost:8.5e11,id:6,clone:false,speed:6.5}, 
+        {active:false,x:1100,y:400,dx:-.707,dy:-.707,color:"#EE33A1",radius:5,multi:1.15,bDamage:1e15,rank:0,cost:1.5e16,id:7,clone:false,speed:9.5}, 
+        {active:false,x:300,y:500,dx:.707,dy:-.707,color:"#2ED371",radius:20,multi:1.14,bDamage:3.5e18,rank:0,cost:6e19,id:8,clone:false,speed:4}, 
+        {active:false,x:600,y:200,dx:-.707,dy:.707,color:"#000000",radius:25,multi:1.13,bDamage:8.5e21,rank:0,cost:2.5e23,id:9,clone:false,speed:5},
+        {active:false,x:500,y:700,dx:-.707,dy:.707,color:"#34D3A0",radius:10,multi:1.12,bDamage:1.65e25,rank:0,cost:6.75e26,id:10,clone:false,speed:8.5},
+        {active:false,x:200,y:900,dx:-.707,dy:.707,color:"#AA789F",radius:23.5,multi:1.1,bDamage:3.33e29,rank:0,cost:1.1e31,id:11,clone:false,speed:5},
         {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#000500",radius:27.5,multi:1.15,bDamage:1e47,rank:0,cost:1e48,id:12,clone:false,speed:8},
         {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#002500",radius:27.5,multi:1.15,bDamage:1e61,rank:0,cost:1e62,id:13,clone:false,speed:7},
         {active:false,x:1000,y:600,dx:-.707,dy:.707,color:"#300000",radius:22.5,multi:1.15,bDamage:1e72,rank:0,cost:1e73,id:14,clone:false,speed:9},
@@ -820,6 +821,14 @@ function prestigeUpgrade(id){
             ballPoints -= 5; 
             baseHealthMulti = 1.5 + (-0.02 * pUpgrades[id-1]); 
             document.getElementById(id+"p").innerHTML = Math.round(100*baseHealthMulti);
+        }
+        break;
+    case 14: 
+        if(ballPoints >= Math.pow(2,pUpgrades[id-1])){ 
+            ballPoints -= Math.pow(2,pUpgrades[id-1]) 
+            pUpgrades[id-1]++;; 
+            document.getElementById(id+"p").innerHTML = numberformat.format(10*(Math.pow(10,value[id-1]))); 
+            document.getElementById(id+"b").innerHTML = Math.pow(2,pUpgrades[id-1]); 
         } 
     } 
     document.getElementById("BP").innerHTML = ballPoints; 
