@@ -60,7 +60,8 @@ var autoExcites;
 var cps = document.getElementById("cps"); 
 var count = 0; 
 var numSec = 1; 
-var start = 0; 
+var start = 0;
+var Decimal = require('break_infinity.js')
 getCPS(); 
 function getCPS() { 
   setTimeout(function() { 
@@ -168,10 +169,10 @@ function clickLevel(){
       clickBalls[y].bDamage = click.bDamage; 
     } 
     if(notationScientfic){ 
-        document.getElementById("CC").innerHTML = numberformat.format(Math.floor(click.bCost*Math.pow(click.multi,click.rank)),{backend: 'decimal.js', format: 'scientific'}); 
+        document.getElementById("CC").innerHTML = numberformat.format(Math.floor(click.bCost*Math.pow(click.multi,click.rank(new Decimal(''))),{backend: 'decimal.js', format: 'scientific'}); 
     } 
     else{ 
-        document.getElementById("CC").innerHTML = numberformat.format(Math.floor(click.bCost*Math.pow(click.multi,click.rank)),{backend: 'decimal.js'}); 
+        document.getElementById("CC").innerHTML = numberformat.format(Math.floor(click.bCost*Math.pow(click.multi,click.rank(new Decimal(''))),{backend: 'decimal.js'}); 
     } 
     document.getElementById("CA").innerHTML = click.rank; 
   } 
@@ -196,10 +197,10 @@ function levelBall(id){
         radius:tempBall.radius,id:tempBall.id,clone:true,speed:tempBall.speed}); 
     } 
     if(notationScientfic){ 
-        document.getElementById(id+"C").innerHTML = numberformat.format(Math.floor(tempBall.cost*Math.pow(tempBall.multi,tempBall.rank)),{backend: 'decimal.js', format: 'scientific'}); 
+        document.getElementById(id+"C").innerHTML = numberformat.format(Math.floor(tempBall.cost*Math.pow(tempBall.multi,tempBall.rank(new Decimal(''))),{backend: 'decimal.js', format: 'scientific'}); 
     } 
     else{ 
-        document.getElementById(id+"C").innerHTML = numberformat.format(Math.floor(tempBall.cost*Math.pow(tempBall.multi,tempBall.rank)),{backend: 'decimal.js'}); 
+        document.getElementById(id+"C").innerHTML = numberformat.format(Math.floor(tempBall.cost*Math.pow(tempBall.multi,tempBall.rank(new Decimal(''))),{backend: 'decimal.js'}); 
     } 
     document.getElementById(id+"A").innerHTML = tempBall.rank; 
     valueSet(); 
@@ -275,10 +276,10 @@ function init(){
         clickBalls[y].bDamage = click.bDamage; 
       } 
       if(notationScientfic){ 
-          document.getElementById("CC").innerHTML = numberformat.format(Math.floor(click.bCost*Math.pow(click.multi,click.rank)),{backend: 'decimal.js', format: 'scientific'}); 
+          document.getElementById("CC").innerHTML = numberformat.format(Math.floor(click.bCost*Math.pow(click.multi,click.rank(new Decimal(''))),{backend: 'decimal.js', format: 'scientific'}); 
       } 
       else{ 
-          document.getElementById("CC").innerHTML = numberformat.format(Math.floor(click.bCost*Math.pow(click.multi,click.rank)),{backend: 'decimal.js'});
+          document.getElementById("CC").innerHTML = numberformat.format(Math.floor(click.bCost*Math.pow(click.multi,click.rank(new Decimal(''))),{backend: 'decimal.js'});
       } 
       document.getElementById("CA").innerHTML = click.rank; 
     } 
@@ -299,10 +300,10 @@ function init(){
             radius:loadBall.radius,id:loadBall.id,clone:true,speed:loadBall.speed}); 
         } 
         if(notationScientfic){ 
-            document.getElementById(loadBall.id+"C").innerHTML = numberformat.format(Math.floor(loadBall.cost*Math.pow(loadBall.multi,loadBall.rank)),{backend: 'decimal.js', format: 'scientific'}); 
+            document.getElementById(loadBall.id+"C").innerHTML = numberformat.format(Math.floor(loadBall.cost*Math.pow(loadBall.multi,loadBall.rank(new Decimal(''))),{backend: 'decimal.js', format: 'scientific'}); 
         } 
         else{ 
-            document.getElementById(loadBall.id+"C").innerHTML = numberformat.format(Math.floor(loadBall.cost*Math.pow(loadBall.multi,loadBall.rank)),{backend: 'decimal.js'}); 
+            document.getElementById(loadBall.id+"C").innerHTML = numberformat.format(Math.floor(loadBall.cost*Math.pow(loadBall.multi,loadBall.rank(new Decimal(''))),{backend: 'decimal.js'}); 
         } 
         document.getElementById(loadBall.id+"A").innerHTML = loadBall.rank; 
       } 
@@ -321,12 +322,12 @@ function init(){
     if (typeof savegame.prestiged !== "undefined") prestiged = savegame.prestiged; 
     if (typeof savegame.ballPoints !== "undefined") ballPoints = savegame.ballPoints; 
     if(notationScientfic){ 
-      document.getElementById("BP").innerHTML = numberformat.format(ballPoints); 
-      document.getElementById("IncomeMulti").innerHTML = numberformat.format(ballPoints*100*ballPointMulti); 
+      document.getElementById("BP").innerHTML = numberformat.format(ballPoints, {backend: 'decimal.js', format: 'scientific'}); 
+      document.getElementById("IncomeMulti").innerHTML = numberformat.format(ballPoints*100, {backend: 'decimal.js', format: 'scientific'});
     } 
     else{ 
-      document.getElementById("BP").innerHTML = numberformat.format(ballPoints, {backend: 'decimal.js', format: 'scientific'}); 
-      document.getElementById("IncomeMulti").innerHTML = numberformat.format(ballPoints*100, {backend: 'decimal.js', format: 'scientific'}); 
+      document.getElementById("BP").innerHTML = numberformat.format(ballPoints, {backend: 'decimal.js', format: 'standard'}); 
+      document.getElementById("IncomeMulti").innerHTML = numberformat.format(ballPoints*100, {backend: 'decimal.js', format: 'standard'}); 
     } 
     if(typeof savegame.clicks !== "undefined"){ 
       start = savegame.clicks; 
@@ -840,10 +841,10 @@ function prestigeUpgrade(id){
 } 
 function valueSet(){ 
   if(notationScientfic){ 
-      document.getElementById("value").innerHTML = numberformat.format(value, {backend: 'decimal.js', format: 'scientific'}) 
+      document.getElementById("value").innerHTML = numberformat.format(value(new Decimal(''), {backend: 'decimal.js', format: 'scientific'}) 
   } 
   else{ 
-      document.getElementById("value").innerHTML = numberformat.format(value, {backend: 'decimal.js'}); 
+      document.getElementById("value").innerHTML = numberformat.format(value(new Decimal(''), {backend: 'decimal.js'}); 
   } 
 } 
 function changeNotation(){ 
