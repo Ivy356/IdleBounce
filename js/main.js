@@ -168,10 +168,10 @@ function clickLevel(){
       clickBalls[y].bDamage = click.bDamage; 
     } 
     if(notationScientfic){ 
-        document.getElementById("CC").innerHTML = numberformat.format(Math.floor(click.bCost*Math.pow(click.multi,click.rank)),{format: 'scientific'}); 
+        document.getElementById("CC").innerHTML = numberformat.format(Math.floor(click.bCost*Math.pow(click.multi,click.rank)),{backend: 'decimal.js', format: 'scientific'}); 
     } 
     else{ 
-        document.getElementById("CC").innerHTML = numberformat.format(Math.floor(click.bCost*Math.pow(click.multi,click.rank))); 
+        document.getElementById("CC").innerHTML = numberformat.format(Math.floor(click.bCost*Math.pow(click.multi,click.rank)),{backend: 'decimal.js'}); 
     } 
     document.getElementById("CA").innerHTML = click.rank; 
   } 
@@ -196,10 +196,10 @@ function levelBall(id){
         radius:tempBall.radius,id:tempBall.id,clone:true,speed:tempBall.speed}); 
     } 
     if(notationScientfic){ 
-        document.getElementById(id+"C").innerHTML = numberformat.format(Math.floor(tempBall.cost*Math.pow(tempBall.multi,tempBall.rank)),{format: 'scientific'}); 
+        document.getElementById(id+"C").innerHTML = numberformat.format(Math.floor(tempBall.cost*Math.pow(tempBall.multi,tempBall.rank)),{backend: 'decimal.js', format: 'scientific'}); 
     } 
     else{ 
-        document.getElementById(id+"C").innerHTML = numberformat.format(Math.floor(tempBall.cost*Math.pow(tempBall.multi,tempBall.rank))); 
+        document.getElementById(id+"C").innerHTML = numberformat.format(Math.floor(tempBall.cost*Math.pow(tempBall.multi,tempBall.rank)),{backend: 'decimal.js'}); 
     } 
     document.getElementById(id+"A").innerHTML = tempBall.rank; 
     valueSet(); 
@@ -255,7 +255,7 @@ function init(){
       document.getElementById("11p").innerHTML = 5*pUpgrades[10]; 
       document.getElementById("12p").innerHTML = Math.round(100*ballPointMulti);
       document.getElementById("13p").innerHTML = Math.round(100*baseHealthMulti);
-      document.getElementById("14p").innerHTML = numberformat.format(10*(Math.pow(10,pUpgrades[13]))); 
+      document.getElementById("14p").innerHTML = numberformat.format(10*(Math.pow(10,value[13]))); 
     } 
     if (typeof savegame.nightMode !== "undefined" && savegame.nightMode){ 
       toggleNightMode(); 
@@ -275,10 +275,10 @@ function init(){
         clickBalls[y].bDamage = click.bDamage; 
       } 
       if(notationScientfic){ 
-          document.getElementById("CC").innerHTML = numberformat.format(Math.floor(click.bCost*Math.pow(click.multi,click.rank)),{format: 'scientific'}); 
+          document.getElementById("CC").innerHTML = numberformat.format(Math.floor(click.bCost*Math.pow(click.multi,click.rank)),{backend: 'decimal.js', format: 'scientific'}); 
       } 
       else{ 
-          document.getElementById("CC").innerHTML = numberformat.format(Math.floor(click.bCost*Math.pow(click.multi,click.rank))); 
+          document.getElementById("CC").innerHTML = numberformat.format(Math.floor(click.bCost*Math.pow(click.multi,click.rank)),{backend: 'decimal.js'});
       } 
       document.getElementById("CA").innerHTML = click.rank; 
     } 
@@ -299,10 +299,10 @@ function init(){
             radius:loadBall.radius,id:loadBall.id,clone:true,speed:loadBall.speed}); 
         } 
         if(notationScientfic){ 
-            document.getElementById(loadBall.id+"C").innerHTML = numberformat.format(Math.floor(loadBall.cost*Math.pow(loadBall.multi,loadBall.rank)),{format: 'scientific'}); 
+            document.getElementById(loadBall.id+"C").innerHTML = numberformat.format(Math.floor(loadBall.cost*Math.pow(loadBall.multi,loadBall.rank)),{backend: 'decimal.js', format: 'scientific'}); 
         } 
         else{ 
-            document.getElementById(loadBall.id+"C").innerHTML = numberformat.format(Math.floor(loadBall.cost*Math.pow(loadBall.multi,loadBall.rank))); 
+            document.getElementById(loadBall.id+"C").innerHTML = numberformat.format(Math.floor(loadBall.cost*Math.pow(loadBall.multi,loadBall.rank)),{backend: 'decimal.js'}); 
         } 
         document.getElementById(loadBall.id+"A").innerHTML = loadBall.rank; 
       } 
@@ -325,8 +325,8 @@ function init(){
       document.getElementById("IncomeMulti").innerHTML = numberformat.format(ballPoints*100*ballPointMulti); 
     } 
     else{ 
-      document.getElementById("BP").innerHTML = numberformat.format(ballPoints, {format: 'scientific'}); 
-      document.getElementById("IncomeMulti").innerHTML = numberformat.format(ballPoints*100, {format: 'scientific'}); 
+      document.getElementById("BP").innerHTML = numberformat.format(ballPoints, {backend: 'decimal.js', format: 'scientific'}); 
+      document.getElementById("IncomeMulti").innerHTML = numberformat.format(ballPoints*100, {backend: 'decimal.js', format: 'scientific'}); 
     } 
     if(typeof savegame.clicks !== "undefined"){ 
       start = savegame.clicks; 
@@ -665,14 +665,14 @@ function prestige(){
       if(notationScientfic){ 
           for(var p = 0; p < startingBalls; p++){ 
               document.getElementById(p+"T").innerHTML = "Buy"; 
-              document.getElementById(p+"C").innerHTML = numberformat.format((Math.pow(100,p+1))/10,{format: 'scientific'}); 
+              document.getElementById(p+"C").innerHTML = numberformat.format((Math.pow(100,p+1))/10,{backend: 'decimal.js', format: 'scientific'}); 
               document.getElementById(p+"A").innerHTML = 0; 
           } 
       } 
       else{ 
           for(var p = 0; p < startingBalls; p++){ 
               document.getElementById(p+"T").innerHTML = "Buy"; 
-              document.getElementById(p+"C").innerHTML = numberformat.format((Math.pow(100,p+1))/10); 
+              document.getElementById(p+"C").innerHTML = numberformat.format((Math.pow(100,p+1))/10,{backend: 'decimal.js'}); 
               document.getElementById(p+"A").innerHTML = 0; 
           } 
       } 
@@ -840,10 +840,10 @@ function prestigeUpgrade(id){
 } 
 function valueSet(){ 
   if(notationScientfic){ 
-      document.getElementById("value").innerHTML = numberformat.format(value, {format: 'scientific'}) 
+      document.getElementById("value").innerHTML = numberformat.format(value, {backend: 'decimal.js', format: 'scientific'}) 
   } 
   else{ 
-      document.getElementById("value").innerHTML = numberformat.format(value); 
+      document.getElementById("value").innerHTML = numberformat.format(value, {backend: 'decimal.js'}); 
   } 
 } 
 function changeNotation(){ 
