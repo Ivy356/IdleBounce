@@ -841,7 +841,7 @@ function prestigeUpgrade(id){
 } 
 function valueSet(){ 
   if(notationScientfic){ 
-      document.getElementById("value").innerHTML = numberformat.format(value(new Decimal(''), {backend: 'decimal.js', format: 'scientific'}) 
+      document.getElementById("value").innerHTML = numberformat.format(value(new Decimal(''), {backend: 'decimal.js', format: 'scientific'});
   } 
   else{ 
       document.getElementById("value").innerHTML = numberformat.format(value(new Decimal(''), {backend: 'decimal.js'}); 
